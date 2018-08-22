@@ -9,48 +9,56 @@ Dark green: #28b485
 
 /*Universal selector will seelct each and every element on the page and then apply these declarations here to it*/
 
-* {
+*,
+*::after,
+*::before {
     /* margin: are used to create space around elements, outside of any defined borders.*/
     margin: 0;
     /* padding: are used to generate space around an element's content, inside of any defined borders.*/
     padding: 0;
-    /* box-sizing: border-box: change the box model so that the borders and the paddings are no longer added to the total width or the total height that we specify for a box*/
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 body {
     /*    This font-family will be inherited by all the child elements of the body*/
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     /*    1.7 times bigger than the predefined line height*/
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+    /* box-sizing: border-box: change the box model so that the borders and the paddings are no longer added to the total width or the total height that we specify for a box*/
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 .btn:link,
 .btn:visited{
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -58,7 +66,7 @@ body {
 .btn::after{
     content: "";
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -73,11 +81,11 @@ body {
     opacity: 0;
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: #fff;
 }
 
-.btn-animated{
+.btn--animated{
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
@@ -103,14 +111,14 @@ body {
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
-.heading-primary-main{
+.heading-primary--main{
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -120,25 +128,25 @@ body {
     */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
-.logo {
-    height: 35px;
+.header__logo {
+    height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -150,11 +158,11 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100% {
@@ -167,11 +175,11 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     100% {
@@ -184,7 +192,7 @@ body {
 @keyframes moveInBottom {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
 
     100% {
