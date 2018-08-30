@@ -1,0 +1,36 @@
+.header {
+    /*    Relative to 95% of the height of the viewport**/
+    height: 95vh;
+    /*    CSS gradients let you display smooth transitions between two or more specified colors.*/
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+    url(./../img/hero.jpg);
+    /*    cover: whatever the width of the viewport, or the element, it wil always try to fit the element inside of the box.*/
+    background-size: cover;
+    /*    whatever the viewport size is, this top of the image here always stays at the top of the container.*/
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        /*translate: shift 50% of width to the left ,shift 50% of the height to the top*/
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+}
