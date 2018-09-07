@@ -11,6 +11,7 @@
     background-size: cover;
     /*    whatever the viewport size is, this top of the image here always stays at the top of the container.*/
     background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
 
